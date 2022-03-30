@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/application/news/news_bloc.dart';
+import 'package:news_app/infrastructure/news/news_api.dart';
 import 'package:news_app/presentation/home_screen.dart';
 
 class MyApp extends StatefulWidget {
@@ -9,11 +12,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  NewsRepository newsRepository = NewsRepository();
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+    return BlocProvider(
+      create: (context) =>
+          NewsBloc(newsRepository: newsRepository)..add(GetNewsEvent()),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeScreen(),
+      ),
     );
   }
 }

@@ -9,7 +9,7 @@ part of 'news_enties.dart';
 _$_News _$$_NewsFromJson(Map<String, dynamic> json) => _$_News(
       status: json['status'] as String? ?? '',
       totalResults: json['totalResults'] as num? ?? -1,
-      source: (json['source'] as List<dynamic>?)
+      articles: (json['articles'] as List<dynamic>?)
               ?.map((e) => Articles.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -18,7 +18,7 @@ _$_News _$$_NewsFromJson(Map<String, dynamic> json) => _$_News(
 Map<String, dynamic> _$$_NewsToJson(_$_News instance) => <String, dynamic>{
       'status': instance.status,
       'totalResults': instance.totalResults,
-      'source': instance.source,
+      'articles': instance.articles,
     };
 
 _$_Articles _$$_ArticlesFromJson(Map<String, dynamic> json) => _$_Articles(
@@ -47,7 +47,7 @@ Map<String, dynamic> _$$_ArticlesToJson(_$_Articles instance) =>
     };
 
 _$_Source _$$_SourceFromJson(Map<String, dynamic> json) => _$_Source(
-      id: json['id'] as num? ?? -1,
+      id: json['id'] as String? ?? '',
       name: json['name'] as String? ?? '',
     );
 

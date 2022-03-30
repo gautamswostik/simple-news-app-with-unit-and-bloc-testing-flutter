@@ -151,8 +151,8 @@ class MockNews extends _i1.Mock implements _i6.News {
       (super.noSuchMethod(Invocation.getter(#totalResults), returnValue: 0)
           as num);
   @override
-  List<_i6.Articles> get source =>
-      (super.noSuchMethod(Invocation.getter(#source),
+  List<_i6.Articles> get articles =>
+      (super.noSuchMethod(Invocation.getter(#articles),
           returnValue: <_i6.Articles>[]) as List<_i6.Articles>);
   @override
   _i6.$NewsCopyWith<_i6.News> get copyWith =>

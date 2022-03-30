@@ -24,11 +24,11 @@ class _$NewsTearOff {
   _News call(
       {String status = '',
       num totalResults = -1,
-      List<Articles> source = const []}) {
+      List<Articles> articles = const []}) {
     return _News(
       status: status,
       totalResults: totalResults,
-      source: source,
+      articles: articles,
     );
   }
 
@@ -44,7 +44,7 @@ const $News = _$NewsTearOff();
 mixin _$News {
   String get status => throw _privateConstructorUsedError;
   num get totalResults => throw _privateConstructorUsedError;
-  List<Articles> get source => throw _privateConstructorUsedError;
+  List<Articles> get articles => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +55,7 @@ mixin _$News {
 abstract class $NewsCopyWith<$Res> {
   factory $NewsCopyWith(News value, $Res Function(News) then) =
       _$NewsCopyWithImpl<$Res>;
-  $Res call({String status, num totalResults, List<Articles> source});
+  $Res call({String status, num totalResults, List<Articles> articles});
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ class _$NewsCopyWithImpl<$Res> implements $NewsCopyWith<$Res> {
   $Res call({
     Object? status = freezed,
     Object? totalResults = freezed,
-    Object? source = freezed,
+    Object? articles = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
@@ -81,9 +81,9 @@ class _$NewsCopyWithImpl<$Res> implements $NewsCopyWith<$Res> {
           ? _value.totalResults
           : totalResults // ignore: cast_nullable_to_non_nullable
               as num,
-      source: source == freezed
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
+      articles: articles == freezed
+          ? _value.articles
+          : articles // ignore: cast_nullable_to_non_nullable
               as List<Articles>,
     ));
   }
@@ -94,7 +94,7 @@ abstract class _$NewsCopyWith<$Res> implements $NewsCopyWith<$Res> {
   factory _$NewsCopyWith(_News value, $Res Function(_News) then) =
       __$NewsCopyWithImpl<$Res>;
   @override
-  $Res call({String status, num totalResults, List<Articles> source});
+  $Res call({String status, num totalResults, List<Articles> articles});
 }
 
 /// @nodoc
@@ -110,7 +110,7 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
   $Res call({
     Object? status = freezed,
     Object? totalResults = freezed,
-    Object? source = freezed,
+    Object? articles = freezed,
   }) {
     return _then(_News(
       status: status == freezed
@@ -121,9 +121,9 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
           ? _value.totalResults
           : totalResults // ignore: cast_nullable_to_non_nullable
               as num,
-      source: source == freezed
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
+      articles: articles == freezed
+          ? _value.articles
+          : articles // ignore: cast_nullable_to_non_nullable
               as List<Articles>,
     ));
   }
@@ -133,7 +133,7 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_News implements _News {
   const _$_News(
-      {this.status = '', this.totalResults = -1, this.source = const []});
+      {this.status = '', this.totalResults = -1, this.articles = const []});
 
   factory _$_News.fromJson(Map<String, dynamic> json) => _$$_NewsFromJson(json);
 
@@ -145,11 +145,11 @@ class _$_News implements _News {
   final num totalResults;
   @JsonKey()
   @override
-  final List<Articles> source;
+  final List<Articles> articles;
 
   @override
   String toString() {
-    return 'News(status: $status, totalResults: $totalResults, source: $source)';
+    return 'News(status: $status, totalResults: $totalResults, articles: $articles)';
   }
 
   @override
@@ -160,7 +160,7 @@ class _$_News implements _News {
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality()
                 .equals(other.totalResults, totalResults) &&
-            const DeepCollectionEquality().equals(other.source, source));
+            const DeepCollectionEquality().equals(other.articles, articles));
   }
 
   @override
@@ -168,7 +168,7 @@ class _$_News implements _News {
       runtimeType,
       const DeepCollectionEquality().hash(status),
       const DeepCollectionEquality().hash(totalResults),
-      const DeepCollectionEquality().hash(source));
+      const DeepCollectionEquality().hash(articles));
 
   @JsonKey(ignore: true)
   @override
@@ -183,7 +183,7 @@ class _$_News implements _News {
 
 abstract class _News implements News {
   const factory _News(
-      {String status, num totalResults, List<Articles> source}) = _$_News;
+      {String status, num totalResults, List<Articles> articles}) = _$_News;
 
   factory _News.fromJson(Map<String, dynamic> json) = _$_News.fromJson;
 
@@ -192,7 +192,7 @@ abstract class _News implements News {
   @override
   num get totalResults;
   @override
-  List<Articles> get source;
+  List<Articles> get articles;
   @override
   @JsonKey(ignore: true)
   _$NewsCopyWith<_News> get copyWith => throw _privateConstructorUsedError;
@@ -541,7 +541,7 @@ Source _$SourceFromJson(Map<String, dynamic> json) {
 class _$SourceTearOff {
   const _$SourceTearOff();
 
-  _Source call({num id = -1, String name = ''}) {
+  _Source call({String id = '', String name = ''}) {
     return _Source(
       id: id,
       name: name,
@@ -558,7 +558,7 @@ const $Source = _$SourceTearOff();
 
 /// @nodoc
 mixin _$Source {
-  num get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -570,7 +570,7 @@ mixin _$Source {
 abstract class $SourceCopyWith<$Res> {
   factory $SourceCopyWith(Source value, $Res Function(Source) then) =
       _$SourceCopyWithImpl<$Res>;
-  $Res call({num id, String name});
+  $Res call({String id, String name});
 }
 
 /// @nodoc
@@ -590,7 +590,7 @@ class _$SourceCopyWithImpl<$Res> implements $SourceCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as num,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -604,7 +604,7 @@ abstract class _$SourceCopyWith<$Res> implements $SourceCopyWith<$Res> {
   factory _$SourceCopyWith(_Source value, $Res Function(_Source) then) =
       __$SourceCopyWithImpl<$Res>;
   @override
-  $Res call({num id, String name});
+  $Res call({String id, String name});
 }
 
 /// @nodoc
@@ -625,7 +625,7 @@ class __$SourceCopyWithImpl<$Res> extends _$SourceCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as num,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -637,14 +637,14 @@ class __$SourceCopyWithImpl<$Res> extends _$SourceCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Source implements _Source {
-  const _$_Source({this.id = -1, this.name = ''});
+  const _$_Source({this.id = '', this.name = ''});
 
   factory _$_Source.fromJson(Map<String, dynamic> json) =>
       _$$_SourceFromJson(json);
 
   @JsonKey()
   @override
-  final num id;
+  final String id;
   @JsonKey()
   @override
   final String name;
@@ -681,12 +681,12 @@ class _$_Source implements _Source {
 }
 
 abstract class _Source implements Source {
-  const factory _Source({num id, String name}) = _$_Source;
+  const factory _Source({String id, String name}) = _$_Source;
 
   factory _Source.fromJson(Map<String, dynamic> json) = _$_Source.fromJson;
 
   @override
-  num get id;
+  String get id;
   @override
   String get name;
   @override

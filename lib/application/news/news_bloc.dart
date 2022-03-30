@@ -15,9 +15,11 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
       emit(NewsLoading());
       final news = await newsRepository.getNews();
 
-      news.fold(
-        (l) => emit(NewsError(failure: l)),
-        (r) => emit(NewsLoaded(news: r)),
+      emit(
+        news.fold(
+          (l) => NewsError(failure: l),
+          (r) => NewsLoaded(news: r),
+        ),
       );
     });
   }

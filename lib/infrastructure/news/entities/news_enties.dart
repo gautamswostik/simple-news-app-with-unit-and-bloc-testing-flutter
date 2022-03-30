@@ -8,7 +8,7 @@ class News with _$News {
   const factory News({
     @Default('') String status,
     @Default(-1) num totalResults,
-    @Default([]) List<Articles> source,
+    @Default([]) List<Articles> articles,
   }) = _News;
 
   factory News.fromJson(Map<String, dynamic> json) => _$NewsFromJson(json);
@@ -34,7 +34,7 @@ class Articles with _$Articles {
 @freezed
 class Source with _$Source {
   const factory Source({
-    @Default(-1) num id,
+    @Default('') String id,
     @Default('') String name,
   }) = _Source;
 
