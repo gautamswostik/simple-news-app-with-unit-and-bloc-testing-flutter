@@ -12,7 +12,7 @@ Firstly I installed the packages and plugins which I'm going to use most in this
 
 The main packages and plugins installed are follows
 
-    1. Bloc - For state management<br/> 2. Dio - For api calls<br/> 3. ohters for code generations and some other suffs<br/>
+1. Bloc - For state management<br/>2. Dio - For api calls<br/>3. ohters for code generations and some other suffs<br/>
 
 The project is divided into 4 parts<br/> 1. App Setup<br/> 2. Application<br/> 3. Infrastructure<br/> 4. Presentation<br/>
 
